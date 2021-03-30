@@ -1,0 +1,6 @@
+<h1> View All My Invites </h1>
+
+<% @invites.each do |invite| %>
+    <p><%= link_to invite.title, invite_path(invite) %></p>
+<% end %>
+

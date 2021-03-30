@@ -1,0 +1,36 @@
+<h1> User Show Page </h1>
+
+<h3><%= @user.name %></h3>
+Bio: <hl><%= @user.bio %></hl>
+
+<marquee 	scrolldelay=60 direction="right">
+  <img src="<%= @user.img_url %>" alt="<%= @user.name %>">
+</marquee>
+
+<div class="followers-list">
+    <h3> Followers </h3>
+    <% @user.followers.each do |user| %>
+        <p><%= link_to user.name, user %> </p>
+    <% end %>
+</div>
+
+<div class="following-list">
+    <h3> Following </h3>
+    <% @user.followees.each do |user| %>
+        <p><%= link_to user.name, user %> </p>
+    <% end %>
+</div>
+
+<hr>
+
+<h3> My Event Invites </h3>
+<% @user.invites.each do |invite| %>
+     <li> <%= link_to invite.title, invite_path(invite) %> </li>
+<% end %>
+
+<h3> My Events </h3>
+<% @user.invites.each do |invite| %>
+     <li> <%= invite.event.name %> </li>
+<% end %>
+
+</hr>

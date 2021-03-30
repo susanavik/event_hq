@@ -1,0 +1,12 @@
+<h1> My Invites </h1>
+
+<h3> Title: <%= @invite.title %></h3>
+
+<div Event Details >
+<h4> Event Name: <%= @invite.event.name %> </h4>
+<h4>  Description: <%= @invite.event.description %> </h4>
+<h4> Date: <%= @invite.event.date %> </h4>
+<h4> Event Host: <%= @invite.user.name %> </h4>
+</div>
+
+<%= link_to "INDEX", invites_path %>

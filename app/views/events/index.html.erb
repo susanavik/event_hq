@@ -1,0 +1,6 @@
+<h1> View All Events </h1>
+
+<% @events.each do |event| %>
+    <p><%= link_to event.name, event_path(event.id) %></p>
+<% end %>
+

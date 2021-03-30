@@ -1,0 +1,15 @@
+<h1> My Event </h1>
+
+<h3> Event Name <%= @event.name %></h3>
+<h4> Description: <%= @event.description %> </h4>
+<h4> Date: <%= @event.date %> </h4>
+<h4> Time: <%= @event.time %> </h4>
+
+<h4> Event Host: 
+    <% @event.invites.each do |invite| %>
+       <%= invite.user.name %> 
+    <% end %>
+</h4>
+</div>
+
+<%= link_to "INDEX", events_path %>
