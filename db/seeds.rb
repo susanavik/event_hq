@@ -9,14 +9,6 @@ Event.destroy_all
 Invite.destroy_all
 User.destroy_all
 
-50.times do 
-    Event.create(name: Faker::Movies::HarryPotter.house,
-    time: rand(0..24),
-    date: Faker::Date.between(from: '2021-03-30', to: '2021-05-30'),
-    location: Faker::Movies::HarryPotter.location,
-    capacity: rand(1..25),
-    description: Faker::Movies::HarryPotter.quote)
-end 
 
 puts "...Creating Users 🙎‍♀️🙍‍♂️"
 users = [
@@ -44,12 +36,20 @@ users = [
 
 
 users.each do |user|
-    User.create(user)
+  User.create(name: user[:name], bio: user[:bio], img_url: user[:img_url], username: user[:name].split[0], password: "pass123")
+end 
+
+50.times do 
+    location_name = Faker::Movies::HarryPotter.location
+    description_quote = Faker::Movies::HarryPotter.quote
+    random_date = Faker::Time.between(from: DateTime.now - 1, to: DateTime.now, format: :short)
+    name_rand = Faker::Movies::HarryPotter.book
+    Event.create(name: name_rand, location: location_name, capacity: rand(1..25), description: description_quote, date_and_time: random_date, user_id: User.all.sample.id)
 end 
 
 puts '...Creating Invites 📝'
 50.times do 
-  Invite.create(title: Faker::Food.ingredient, user_id: User.all.sample.id, event_id: Event.all.sample.id)
+  Invite.create(title: "Come hang with me!", user_id: User.all.sample.id, event_id: Event.all.sample.id)
 end 
 
 50.times do 

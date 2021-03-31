@@ -2,13 +2,10 @@
 
 <h3> Event Name <%= @event.name %></h3>
 <h4> Description: <%= @event.description %> </h4>
-<h4> Date: <%= @event.date %> </h4>
-<h4> Time: <%= @event.time %> </h4>
+<h4> Date & Time: <%= @event.date_and_time %> </h4>
 
 <h4> Event Host: 
-    <% @event.invites.each do |invite| %>
-       <%= invite.user.name %> 
-    <% end %>
+    <%= link_to @event.user.name, user_path(@event.user) %>
 </h4>
 </div>
 

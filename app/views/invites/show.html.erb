@@ -1,3 +1,7 @@
+<h2> <%= link_to "INDEX", invites_path %> </h2>
+<h2> <%= link_to "All users", users_path %> </h2>
+<h2> <%= link_to "All Events", events_path %> </h2>
+
 <h1> My Invites </h1>
 
 <h3> Title: <%= @invite.title %></h3>
@@ -5,8 +9,6 @@
 <div Event Details >
 <h4> Event Name: <%= @invite.event.name %> </h4>
 <h4>  Description: <%= @invite.event.description %> </h4>
-<h4> Date: <%= @invite.event.date %> </h4>
+<h4> Date: <%= @invite.event.date_and_time %> </h4>
 <h4> Event Host: <%= @invite.user.name %> </h4>
 </div>
-
-<%= link_to "INDEX", invites_path %>

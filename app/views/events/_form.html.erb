@@ -1,0 +1,31 @@
+<div class="form-container">
+
+<%= form_for @event, html: {class: 'form-basic'} do |f| %>
+    <div class='form-input'>
+      <%= f.label :name %>
+      <%= f.text_field :name %>
+    </div>
+
+    <div class='form-input'>
+      <%= f.label :date_and_time %>
+      <%= f.datetime_field :date_and_time %>
+    </div>
+
+    <div class='form-input'>
+      <%= f.label :location %>
+      <%= f.text_field :location %>
+    </div>
+
+    <div class='form-input'>
+      <%= f.label :description %>
+      <%= f.text_field :description %>
+    </div>
+    
+    <div class='form-input'>
+      <%= f.label :capacity %>
+      <%= f.number_field :capacity %>
+    </div>
+
+    <%= f.submit %>
+  <% end %>
+  </div>

@@ -1,5 +1,9 @@
 <h1> User Show Page </h1>
 
+
+<%= link_to "Create a New Invite", new_invite_path %>
+<%= link_to "Create a New Event", new_event_path %>
+
 <h3><%= @user.name %></h3>
 Bio: <hl><%= @user.bio %></hl>
 
@@ -23,14 +27,16 @@ Bio: <hl><%= @user.bio %></hl>
 
 <hr>
 
-<h3> My Event Invites </h3>
-<% @user.invites.each do |invite| %>
-     <li> <%= link_to invite.title, invite_path(invite) %> </li>
+<h3> Hosted Events </h3>
+<% @user.hosted_events.each do |event| %>
+     <li> <%= link_to event.name, event_path(event) %> </li>
 <% end %>
 
-<h3> My Events </h3>
+<h3> Attending Events </h3>
 <% @user.invites.each do |invite| %>
+     <li> <%= invite.title %> </li>
      <li> <%= invite.event.name %> </li>
+     <hr>
 <% end %>
 
 </hr>
