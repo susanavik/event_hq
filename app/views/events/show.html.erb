@@ -1,12 +1,16 @@
+<div class="form-container">
 <h1> My Event </h1>
 
 <h3> Event Name <%= @event.name %></h3>
 <h4> Description: <%= @event.description %> </h4>
 <h4> Date & Time: <%= @event.date_and_time %> </h4>
+<h4> Capacity: <%= @event.capacity %> </h4>
 
 <h4> Event Host: 
     <%= link_to @event.user.name, user_path(@event.user) %>
 </h4>
 </div>
 
-<%= link_to "INDEX", events_path %>
+<%= button_to "Edit Event", edit_event_path(@event), method: :get %>
+<%= button_to "Delete Event", event_path(@event), method: :delete %>
+</div>
