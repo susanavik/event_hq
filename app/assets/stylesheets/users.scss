@@ -2,6 +2,10 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
+.profile header {
+    text-align: center;
+}
+
 .user-info {
     grid-area: 1 / 1 / 7 / 9; 
   // border: 1px solid black;
