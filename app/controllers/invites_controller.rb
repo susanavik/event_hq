@@ -7,7 +7,7 @@ class InvitesController < ApplicationController
     def new
         @invite = Invite.new
 
-        @events = Event.all
+        @events = @current_user.hosted_events
         @users = User.all
     end
 
@@ -23,6 +23,9 @@ class InvitesController < ApplicationController
 
     def edit
         @invite = Invite.find(params[:id])
+
+        @events = @current_user.hosted_events
+        @users = User.all 
     end
 
     def update
@@ -35,7 +38,7 @@ class InvitesController < ApplicationController
         @invite = Invite.find(params[:id])
         @invite.destroy
 
-        redirect_to invites_path
+        redirect_to user_path(@current_user)
     end
 
     def invite_params

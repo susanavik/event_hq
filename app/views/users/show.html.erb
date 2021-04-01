@@ -1,12 +1,17 @@
 <div class="user-info">
-<h1, class= "profile header"> My Profile Page </h1>
+<div class='profile_header'>
+        <h1 class="header"> My Profile Page </h1>
+    </div>
 
+<div class='new_invite'>
+    <h3 class="header"><%= link_to "Create a New Invite", new_invite_path %></h3>
+</div>
+<div class='new_event'>
+    <h3 class="header"><%= link_to "Create a New Event", new_event_path %></h3>
+</div>
 
-<%= link_to "Create a New Invite", new_invite_path %>
-<%= link_to "Create a New Event", new_event_path %>
-
-<h3><%= @user.name %></h3>
-Bio: <hl><%= @user.bio %></hl>
+<h3> <%= @user.name %></h3>
+<h3> My Wonderful Bio: </h3> <hl><%= @user.bio %></hl>
 
 <marquee 	scrolldelay=60 direction="right">
   <img src="<%= @user.img_url %>" alt="<%= @user.name %>">
@@ -17,6 +22,7 @@ Bio: <hl><%= @user.bio %></hl>
     <% @user.followers.each do |user| %>
         <p><%= link_to user.name, user %> </p>
     <% end %>
+    <hr>
 </div>
 
 <div class="following-list">
@@ -28,17 +34,23 @@ Bio: <hl><%= @user.bio %></hl>
 
 <hr>
 
+<div class="hosted_event"> 
 <h3> Hosted Events </h3>
 <% @user.hosted_events.each do |event| %>
-     <li> <%= link_to event.name, event_path(event) %> </li>
+     <p> <%= link_to event.name, event_path(event) %> </p>
 <% end %>
+<hr>
+</div>
 
+<div class="attending_events"> 
 <h3> Attending Events </h3>
 <% @user.invites.each do |invite| %>
-     <li> Invite: <%= link_to invite.title, invite_path(invite) %> </li>
-     <li> Event Name: <%= invite.event.name %> </li>
+     <p> Invite: <%= link_to invite.title, invite_path(invite) %> </p>
+     <p> Event Name: <%= invite.event.name %> </p>
+     <%= button_to "Delete Invite", invite_path(invite), method: :delete %>
      <hr>
 <% end %>
-
-</hr>
 </div>
+
+ </hr>
+ </div>

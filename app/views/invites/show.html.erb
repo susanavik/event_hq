@@ -7,10 +7,10 @@
 <h4> Event Name: <%= @invite.event.name %> </h4>
 <h4>  Description: <%= @invite.event.description %> </h4>
 <h4> Date: <%= @invite.event.date_and_time %> </h4>
-<h4> Event Host: <%= link_to @invite.user.name, user_path(@invite.user) %> </h4>
+<h4> Event Host: <%= link_to @invite.event.user.name, user_path(@invite.event.user) %> </h4>
 </div>
 
 
 <%= button_to "Edit Invite", edit_invite_path(@invite), method: :get %>
-<%= button_to "Delete Invite", user_path(@invite.user), method: :delete %>
+<%= button_to "Delete Invite", invite_path(@invite), method: :delete %>
 </div>

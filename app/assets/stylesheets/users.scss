@@ -11,26 +11,37 @@
   // border: 1px solid black;
     background-color: lightblue;
     border-radius: 10px;
-    margin: 20px;
+    margin-left: auto;
+    margin-right: auto;
     text-align: center;
     max-width: 60%;
 }
-.followers-list {
-    grid-area: 7 / 1 / 13 / 5; 
-    overflow-y: scroll; 
-    text-align: center;
-    background-color: lightblue;
-    border-radius: 10px;
-    margin: 20px;
-    max-width: 60%;
-}
+// .followers-list {
+//     grid-area: 7 / 1 / 13 / 5; 
+//     overflow-y: scroll; 
+//     text-align: center;
+//     background-color: lightblue;
+//     border-radius: 10px;
+//     margin: 20px;
+//     max-width: 60%;
+// }
 
-.following-list {
-    grid-area: 7 / 5 / 13 / 9;
-    overflow-y: scroll; 
-    text-align: center;
-    background-color: lightblue;
-    border-radius: 10px;
-    margin: 20px;
-    max-width: 60%;
-}
+// .following-list {
+//     grid-area: 7 / 5 / 13 / 9;
+//     overflow-y: scroll; 
+//     text-align: center;
+//     background-color: lightblue;
+//     border-radius: 10px;
+//     margin: 20px;
+//     max-width: 60%;
+// }
+
+// .hosted_event {
+//     grid-area: 7 / 5 / 13 / 9;
+//     overflow-y: scroll; 
+//     text-align: center;
+//     background-color: lightblue;
+//     border-radius: 10px;
+//     margin: 20px;
+//     max-width: 60%;
+// }
