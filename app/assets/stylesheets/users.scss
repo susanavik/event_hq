@@ -1,3 +1,32 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+.user-info {
+    grid-area: 1 / 1 / 7 / 9; 
+  // border: 1px solid black;
+    background-color: lightblue;
+    border-radius: 10px;
+    margin: 20px;
+    text-align: center;
+    max-width: 60%;
+}
+.followers-list {
+    grid-area: 7 / 1 / 13 / 5; 
+    overflow-y: scroll; 
+    text-align: center;
+    background-color: lightblue;
+    border-radius: 10px;
+    margin: 20px;
+    max-width: 60%;
+}
+
+.following-list {
+    grid-area: 7 / 5 / 13 / 9;
+    overflow-y: scroll; 
+    text-align: center;
+    background-color: lightblue;
+    border-radius: 10px;
+    margin: 20px;
+    max-width: 60%;
+}

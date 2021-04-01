@@ -1,4 +1,4 @@
-
+<div class="form-container">
 <h1> My Invites </h1>
 
 <h3> Title: <%= @invite.title %></h3>
@@ -13,3 +13,4 @@
 
 <%= button_to "Edit Invite", edit_invite_path(@invite), method: :get %>
 <%= button_to "Delete Invite", user_path(@invite.user), method: :delete %>
+</div>
