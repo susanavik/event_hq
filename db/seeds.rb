@@ -39,12 +39,28 @@ users.each do |user|
   User.create(name: user[:name], bio: user[:bio], img_url: user[:img_url], username: user[:name].split[0], password: "pass123")
 end 
 
-50.times do 
-    location_name = Faker::Movies::HarryPotter.location
-    description_quote = Faker::Movies::HarryPotter.quote
-    random_date = Faker::Time.between(from: DateTime.now - 1, to: DateTime.now, format: :short)
-    name_rand = Faker::Movies::HarryPotter.book
-    Event.create(name: name_rand, location: location_name, capacity: rand(1..25), description: description_quote, date_and_time: random_date, user_id: User.all.sample.id)
+events = [
+  {name: "Garden Party", location: Faker::Movies::HarryPotter.location, capacity: rand(1..25), description: Faker::Movies::HarryPotter.quote, date_and_time: Faker::Time.between(from: DateTime.now - 1, to: DateTime.now, format: :short), user_id: User.all.sample.id},
+  {name: "Outing", location: Faker::Movies::HarryPotter.location, capacity: rand(1..25), description: Faker::Movies::HarryPotter.quote, date_and_time: Faker::Time.between(from: DateTime.now - 1, to: DateTime.now, format: :short), user_id: User.all.sample.id},
+  {name: "Feast", location: Faker::Movies::HarryPotter.location, capacity: rand(1..25), description: Faker::Movies::HarryPotter.quote, date_and_time: Faker::Time.between(from: DateTime.now - 1, to: DateTime.now, format: :short), user_id: User.all.sample.id},
+  {name: "Family Reunion", location: Faker::Movies::HarryPotter.location, capacity: rand(1..25), description: Faker::Movies::HarryPotter.quote, date_and_time: Faker::Time.between(from: DateTime.now - 1, to: DateTime.now, format: :short), user_id: User.all.sample.id},
+  {name: "Birtday Party", location: Faker::Movies::HarryPotter.location, capacity: rand(1..25), description: Faker::Movies::HarryPotter.quote, date_and_time: Faker::Time.between(from: DateTime.now - 1, to: DateTime.now, format: :short), user_id: User.all.sample.id},
+  {name: "Friendsgiving", location: Faker::Movies::HarryPotter.location, capacity: rand(1..25), description: Faker::Movies::HarryPotter.quote, date_and_time: Faker::Time.between(from: DateTime.now - 1, to: DateTime.now, format: :short), user_id: User.all.sample.id},
+  {name: "Christmas Party", location: Faker::Movies::HarryPotter.location, capacity: rand(1..25), description: Faker::Movies::HarryPotter.quote, date_and_time: Faker::Time.between(from: DateTime.now - 1, to: DateTime.now, format: :short), user_id: User.all.sample.id},
+  {name: "21st Birthday Party", location: Faker::Movies::HarryPotter.location, capacity: rand(1..25), description: Faker::Movies::HarryPotter.quote, date_and_time: Faker::Time.between(from: DateTime.now - 1, to: DateTime.now, format: :short), user_id: User.all.sample.id},
+  {name: "Studio 54", location: Faker::Movies::HarryPotter.location, capacity: rand(1..25), description: Faker::Movies::HarryPotter.quote, date_and_time: Faker::Time.between(from: DateTime.now - 1, to: DateTime.now, format: :short), user_id: User.all.sample.id},
+  {name: "Dinner and Dancing", location: Faker::Movies::HarryPotter.location, capacity: rand(1..25), description: Faker::Movies::HarryPotter.quote, date_and_time: Faker::Time.between(from: DateTime.now - 1, to: DateTime.now, format: :short), user_id: User.all.sample.id},
+  {name: "Haloween Trick or Treating", location: Faker::Movies::HarryPotter.location, capacity: rand(1..25), description: Faker::Movies::HarryPotter.quote, date_and_time: Faker::Time.between(from: DateTime.now - 1, to: DateTime.now, format: :short), user_id: User.all.sample.id},
+  {name: "Watch Party", location: Faker::Movies::HarryPotter.location, capacity: rand(1..25), description: Faker::Movies::HarryPotter.quote, date_and_time: Faker::Time.between(from: DateTime.now - 1, to: DateTime.now, format: :short), user_id: User.all.sample.id},
+  {name: "Caroling Party", location: Faker::Movies::HarryPotter.location, capacity: rand(1..25), description: Faker::Movies::HarryPotter.quote, date_and_time: Faker::Time.between(from: DateTime.now - 1, to: DateTime.now, format: :short), user_id: User.all.sample.id},
+  {name: "Soccer Game", location: Faker::Movies::HarryPotter.location, capacity: rand(1..25), description: Faker::Movies::HarryPotter.quote, date_and_time: Faker::Time.between(from: DateTime.now - 1, to: DateTime.now, format: :short), user_id: User.all.sample.id},
+  {name: "Sunday BBQ", location: Faker::Movies::HarryPotter.location, capacity: rand(1..25), description: Faker::Movies::HarryPotter.quote, date_and_time: Faker::Time.between(from: DateTime.now - 1, to: DateTime.now, format: :short), user_id: User.all.sample.id},
+  {name: "Caroline and Thomas's Wedding", location: Faker::Movies::HarryPotter.location, capacity: rand(1..25), description: Faker::Movies::HarryPotter.quote, date_and_time: Faker::Time.between(from: DateTime.now - 1, to: DateTime.now, format: :short), user_id: User.all.sample.id},
+  {name: "Music Festival", location: Faker::Movies::HarryPotter.location, capacity: rand(1..25), description: Faker::Movies::HarryPotter.quote, date_and_time: Faker::Time.between(from: DateTime.now - 1, to: DateTime.now, format: :short), user_id: User.all.sample.id}
+]
+
+events.each do |event|
+  Event.create(name: event[:name], location: event[:location], capacity: event[:capacity], description: event[:description], date_and_time: event[:date_and_time], user_id: event[:user_id])
 end 
 
 puts '...Creating Invites 📝'

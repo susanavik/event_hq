@@ -1,5 +1,12 @@
-<h1> User Index Page </h1>
 
-<% @users.each do |user| %>
-    <p><%= link_to user.name, user_path(user) %></p>
-<% end %>
+<h1> All User Page </h1>
+
+
+<div class="index-container">
+  <% @users.each do |user| %>
+    <div class="index-card">
+      <p><%= link_to user.name, user_path(user) %></p>
+      <img class="index-img" src="<%= user.img_url %>" alt="<%= user.name%>">
+    </div>
+  <% end %>
+</div>
