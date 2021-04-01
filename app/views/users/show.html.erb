@@ -1,4 +1,4 @@
-<h1> User Show Page </h1>
+<h1> My Profile Page </h1>
 
 
 <%= link_to "Create a New Invite", new_invite_path %>
@@ -34,8 +34,8 @@ Bio: <hl><%= @user.bio %></hl>
 
 <h3> Attending Events </h3>
 <% @user.invites.each do |invite| %>
-     <li> <%= invite.title %> </li>
-     <li> <%= invite.event.name %> </li>
+     <li> Invite: <%= link_to invite.title, invite_path(invite) %> </li>
+     <li> Event Name: <%= invite.event.name %> </li>
      <hr>
 <% end %>
 

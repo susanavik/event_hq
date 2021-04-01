@@ -13,10 +13,11 @@
   <body>
     
   <div>
+    <h1 class= "logo"> Event HQ </h1>
     <ul>
-      <li><%= link_to "users", users_path %></li>
-      <li><%= link_to "events", events_path %></li>
-
+      <li><%= link_to "all users", users_path %></li>
+      <li><%= link_to "all events", events_path %></li>
+      <li><%= link_to "all invites", invites_path %></li>
       <% if @current_user %>
         <li><%= link_to "logout", logout_path %></li>
       <% else %>
